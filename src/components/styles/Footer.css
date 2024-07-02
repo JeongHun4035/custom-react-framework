@@ -1,0 +1,8 @@
+.footer-wrapper {
+  height: 300px;
+  background-color: #212226;
+  color: #c7ccd1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

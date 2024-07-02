@@ -1,6 +1,7 @@
 import { createBrowserRouter, CustomRouteObject } from "react-router-dom"
-import Home from "@/pages/Home"
+
 import About from "@/pages/About"
+import Home from "@/pages/Home"
 
 // Lazy Loading으로 초기 로딩 성능을 향상 가능
 // const About = lazy(() => import("@/pages/About"))
