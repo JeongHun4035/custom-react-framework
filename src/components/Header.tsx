@@ -1,18 +1,17 @@
 import "@/components/styles/Header.css"
-import { useState } from "react"
 
-import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai"
 import { FiSettings } from "react-icons/fi"
+import { HiOutlineMenu } from "react-icons/hi"
 import { HiMiniBellAlert } from "react-icons/hi2"
 import { RiUser5Fill } from "react-icons/ri"
+
+import { useSideBarContext } from "@/context/SideBarContext"
+
 const SideController = () => {
-  const [isMenuFolded, setIsMenuFolded] = useState(true)
-  const toggleMenu = () => {
-    setIsMenuFolded(!isMenuFolded)
-  }
+  const { toggleSideBar } = useSideBarContext()
   return (
-    <div className="side-controller" onClick={toggleMenu}>
-      {isMenuFolded ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
+    <div className="side-controller" onClick={toggleSideBar}>
+      <HiOutlineMenu />
     </div>
   )
 }

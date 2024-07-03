@@ -14,6 +14,11 @@
   margin-left: 10px;
 }
 
+.side-controller:hover {
+  cursor: pointer;
+  color: #81c784;
+}
+
 .preferences-wrapper {
   display: flex;
   flex-direction: row;
@@ -27,6 +32,13 @@
   align-items: center;
 }
 
+.preferences-item:hover {
+  cursor: pointer;
+  color: #81c784;
+}
+
 .preferences-item span {
   font-size: 12px;
 }
+
+

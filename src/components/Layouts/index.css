@@ -16,6 +16,14 @@ footer {
   flex-shrink: 0;
 }
 
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+}
+
 main {
   flex: 1;
   overflow: auto;
