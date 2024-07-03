@@ -5,9 +5,13 @@ import "@/components/Layouts/index.css"
 const Layout = (props: { children: React.ReactNode }) => {
   return (
     <div className="layout-wrapper">
-      <Header />
-      {props.children}
-      <Footer />
+      <header>
+        <Header />
+      </header>
+      <main>{props.children}</main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
