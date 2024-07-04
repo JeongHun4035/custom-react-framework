@@ -49,7 +49,7 @@ export default [
       "react-hooks/exhaustive-deps": "warn",
       "no-var": "error",
       "no-unused-vars": "warn",
-      "no-console": ["error", { allow: ["warn", "error"] }],
+      "no-console": ["warn", { allow: ["warn", "error"] }],
       "react-refresh/only-export-components": "warn",
     },
   },
@@ -78,11 +78,11 @@ export default [
         "error",
         {
           groups: [
-            ["builtin", "external"], // Node.js built-in 모듈 및 외부 라이브러리
-            ["internal"], // 내부 모듈 (프로젝트 내에서 alias로 설정된 모듈 등)
-            ["parent", "sibling", "index"], // 부모, 형제, 인덱스 파일
-            ["type"], // 타입 관련 import
-            ["unknown"], // 알 수 없는 그룹 (기타)
+            ["builtin", "external"],
+            ["internal"],
+            ["parent", "sibling", "index"],
+            ["type"],
+            ["unknown"],
           ],
           pathGroups: [
             {
@@ -99,6 +99,11 @@ export default [
               group: "unknown",
               position: "after",
             },
+            {
+              pattern: "**/context/**",
+              group: "internal",
+              position: "after",
+            },
           ],
           pathGroupsExcludedImportTypes: ["builtin"],
           "newlines-between": "always",
@@ -108,6 +113,7 @@ export default [
           },
         },
       ],
+      "import/newline-after-import": ["error", { count: 1 }],
     },
   },
 ]

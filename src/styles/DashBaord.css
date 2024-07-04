@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .dashboard-display-board {
   display: flex;
   flex-direction: row;
@@ -11,8 +16,14 @@
 
 .dashboard-image {
   padding: 10px;
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
+  max-width: 100%;
+  height: auto;
+  display: block;
   max-height: 800px;
+}
+
+.dashboard-introduction {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
