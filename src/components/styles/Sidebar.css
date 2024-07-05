@@ -35,8 +35,14 @@
 
 .sidebar-menus {
   flex: 1;
+  overflow-y: auto;
+}
+
+.tree-area {
+  padding: 20px;
 }
 
 .sidebar-footer {
   height: 150px;
+  background-color: #212226;
 }
