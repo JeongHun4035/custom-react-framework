@@ -130,6 +130,9 @@ const mockTreeData: ITreeItem[] = [
 
 const SideBar = () => {
   const { isSideBarVisible, toggleSideBar } = useSideBarContext()
+  const treeItemClickEvent = (id: string) => {
+    console.log(id)
+  }
   return (
     <div
       className={`sidebar-wrapper ${isSideBarVisible ? "visible" : "hidden"}`}
@@ -141,9 +144,9 @@ const SideBar = () => {
         />
       </div>
       <div className="sidebar-menus">
-        {/* <h2>Structure Items</h2> */}
+        <h2>Structure Items</h2>
         <div className="tree-area">
-          <CustomTree data={mockTreeData} />
+          <CustomTree data={mockTreeData} onRowClick={treeItemClickEvent} />
         </div>
       </div>
       <div className="sidebar-footer">footer</div>

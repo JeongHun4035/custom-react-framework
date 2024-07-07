@@ -90,7 +90,7 @@ const CustomTree: React.FC<{
               >
                 {node.parentId === null ? (
                   <h3>
-                    {node.name}{" "}
+                    {node.name}
                     {children.length > 0 && ` (${children.length}) `}
                   </h3>
                 ) : (
