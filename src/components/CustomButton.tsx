@@ -6,7 +6,8 @@ interface CustomButtonProps {
   border?: string
   color?: string
   background?: string
-  primary?: boolean
+  $primary?: boolean
+  onClick?: () => void
 }
 
 const StyledButton = styled.button<CustomButtonProps>`
@@ -19,15 +20,15 @@ const StyledButton = styled.button<CustomButtonProps>`
   background: ${(props) => props.background || "#ffffff"};
 
   ${(props) =>
-    props.primary &&
+    props.$primary &&
     css`
       color: #ffffff;
       background: #0376f9;
     `}
   &:hover {
     cursor: pointer;
-    background: ${(props) => (props.primary ? "#0255b5" : "#f0f0f0")};
-    border-color: ${(props) => (props.primary ? "#0255b5" : "#0376f9")};
+    background: ${(props) => (props.$primary ? "#0255b5" : "#f0f0f0")};
+    border-color: ${(props) => (props.$primary ? "#0255b5" : "#0376f9")};
   }
 `
 
