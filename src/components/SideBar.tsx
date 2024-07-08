@@ -1,5 +1,6 @@
 import "@/components/styles/Sidebar.css"
 import { FaWindowClose } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
 import CustomTree from "@/components/CustomTree"
 import { ITreeItem } from "@/components/types/tree"
@@ -130,8 +131,11 @@ const mockTreeData: ITreeItem[] = [
 
 const SideBar = () => {
   const { isSideBarVisible, toggleSideBar } = useSideBarContext()
-  const treeItemClickEvent = (id: string) => {
-    console.log(id)
+  const navigate = useNavigate()
+  const treeItemClickEvent = (item: ITreeItem) => {
+    if (item.parentId) {
+      navigate(`/example/${item.parentId}/${item.id}`)
+    }
   }
   return (
     <div

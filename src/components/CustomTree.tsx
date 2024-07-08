@@ -53,7 +53,7 @@ const CustomTree: React.FC<{
   data: ITreeItem[]
   direction?: "row" | "column"
   // eslint-disable-next-line no-unused-vars
-  onRowClick?: (id: string) => void
+  onRowClick?: (id: ITreeItem) => void
 }> = ({ data, direction = "column", onRowClick }) => {
   const [openNodes, setOpenNodes] = useState<Set<string>>(new Set())
   const rowToggleEvent = (id: string) => {
@@ -68,9 +68,9 @@ const CustomTree: React.FC<{
     })
   }
 
-  const rowClickEvent = (selectId: string) => {
+  const rowClickEvent = (item: ITreeItem) => {
     if (onRowClick) {
-      onRowClick(selectId)
+      onRowClick(item)
     }
   }
 
@@ -85,7 +85,7 @@ const CustomTree: React.FC<{
               <TreeItemContent
                 onClick={() => {
                   rowToggleEvent(node.id)
-                  rowClickEvent(node.id)
+                  rowClickEvent(node)
                 }}
               >
                 {node.parentId === null ? (
