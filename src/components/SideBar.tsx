@@ -58,49 +58,9 @@ const mockTreeData: ITreeItem[] = [
     name: "Input",
   },
   {
-    parentId: "input",
-    id: "text",
-    name: "Text",
-  },
-  {
-    parentId: "input",
-    id: "number",
-    name: "Number",
-  },
-  {
-    parentId: "input",
-    id: "chip",
-    name: "Chip",
-  },
-  {
     parentId: "form",
     id: "picker",
     name: "Picker",
-  },
-  {
-    parentId: "picker",
-    id: "date",
-    name: "Date",
-  },
-  {
-    parentId: "picker",
-    id: "time",
-    name: "Time",
-  },
-  {
-    parentId: "form",
-    id: "check",
-    name: "Check",
-  },
-  {
-    parentId: "check",
-    id: "radio",
-    name: "Radio",
-  },
-  {
-    parentId: "check",
-    id: "checkbox",
-    name: "Check Box",
   },
   {
     parentId: null,
@@ -134,7 +94,7 @@ const SideBar = () => {
   const navigate = useNavigate()
   const treeItemClickEvent = (item: ITreeItem) => {
     if (item.parentId) {
-      navigate(`/example/${item.parentId}/${item.id}`)
+      navigate(`/example/${item.id}`)
     }
   }
   return (
