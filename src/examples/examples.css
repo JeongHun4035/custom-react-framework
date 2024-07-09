@@ -1,6 +1,6 @@
-.buttons-wrapper {
+.examples-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -15,9 +15,15 @@
   background-color: #1e1e1e;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  border-radius: 0.7rem;
 }
 
 .exmaple-item {
   padding: 10px;
+}
+
+.code-area {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
