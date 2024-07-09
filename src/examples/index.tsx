@@ -3,13 +3,13 @@ import "@/examples/index.css"
 
 import ButtonPage from "@/examples/basic/ButtonPage"
 import InputPage from "@/examples/form/InputPage"
-import DialogPage from "@/examples/modals/DialogPage"
+import ModalPage from "@/examples/modals/ModalPage"
 
 const ExampleRenderer = (currentId: string) => {
   const examplePages: { [key: string]: JSX.Element } = {
     button: <ButtonPage />,
     input: <InputPage />,
-    dialog: <DialogPage />,
+    dialog: <ModalPage />,
   }
   return examplePages[currentId] || <div>Empty</div>
 }
