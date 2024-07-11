@@ -3,6 +3,7 @@ import "@/examples/index.css"
 
 import ButtonPage from "@/examples/basic/ButtonPage"
 import InputPage from "@/examples/form/InputPage"
+import PaginationPage from "@/examples/grid/PaginationPage"
 import TablePage from "@/examples/grid/TablePage"
 import ModalPage from "@/examples/modals/ModalPage"
 
@@ -12,6 +13,7 @@ const ExampleRenderer = (currentId: string) => {
     input: <InputPage />,
     dialog: <ModalPage />,
     table: <TablePage />,
+    pagination: <PaginationPage />,
   }
   return examplePages[currentId] || <div>Empty</div>
 }

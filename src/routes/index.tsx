@@ -6,7 +6,7 @@ import ExamplePage from "@/examples/index"
 import About from "@/pages/About"
 import DashBoard from "@/pages/DashBoard"
 // Lazy Loading으로 초기 로딩 성능을 향상 가능
-// const About = lazy(() => import("@/pages/About"))
+// const ExamplePage = lazy(() => import("@/examples/index"))
 
 const routes: CustomRouteObject[] = [
   {
