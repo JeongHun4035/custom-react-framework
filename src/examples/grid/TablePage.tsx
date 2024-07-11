@@ -1,6 +1,8 @@
+import CodeEditor from "@/components/CodeEditor"
 import CustomTable from "@/components/CustomTable"
 import { IColumn } from "@/components/CustomTable"
 import "@/examples/examples.css"
+import tables from "@/examples/code/tables.json"
 
 const TablePage = () => {
   const mockColumns: IColumn[] = [
@@ -94,14 +96,17 @@ const TablePage = () => {
 
   const columnClickEvent = (column: IColumn) => {
     console.log(column)
+    window.alert(`column.id: ${column.id}\ncolumn.name: ${column.name}`)
   }
 
   const rowClickEvent = (row: any) => {
     console.log(row)
+    window.alert(`row.id: ${row.id}\nrow.number: ${row.number}`)
   }
 
   const cellClickEvent = (cell: any) => {
     console.log(cell)
+    window.alert(`cell: ${cell}`)
   }
 
   return (
@@ -120,6 +125,16 @@ const TablePage = () => {
                 onCellClick={cellClickEvent}
               />
             </div>
+          </div>
+        </div>
+        <div className="code-area">
+          <div>
+            <h2>Component code</h2>
+            <CodeEditor value={tables.codes.component} />
+          </div>
+          <div>
+            <h2>Example code</h2>
+            <CodeEditor value={tables.codes.example} />
           </div>
         </div>
       </div>

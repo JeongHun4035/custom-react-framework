@@ -56,7 +56,7 @@ const TableBodyTr = styled.tr<TableStyledProps>`
   &:hover {
     cursor: pointer;
     color: ${(props) => props.$rowHoverColor || "blue"};
-    background-color: ${(props) => props.$rowHoverBackground || "white"};
+    background-color: ${(props) => props.$rowHoverBackground || "#bebade"};
   }
 `
 
