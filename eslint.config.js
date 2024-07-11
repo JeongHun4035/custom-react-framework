@@ -34,6 +34,7 @@ export default [
     },
     rules: {
       ...typescriptPlugin.configs.recommended.rules,
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
   // eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-react-refresh
@@ -48,7 +49,7 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "no-var": "error",
-      "no-unused-vars": "warn",
+      "no-unused-vars": "off",
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "react-refresh/only-export-components": "warn",
     },

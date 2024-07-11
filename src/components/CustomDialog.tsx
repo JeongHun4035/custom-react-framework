@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import CustomButton from "@/components/CustomButton"
 import { FaWindowClose } from "react-icons/fa"
+import styled from "styled-components"
+
+import CustomButton from "@/components/CustomButton"
 
 interface StyledDailogProps {
   $width?: string
@@ -80,7 +80,7 @@ export interface DialogProps {
   setVisible: (visible: boolean) => void
 }
 
-const Dialog: React.FC<StyledDailogProps & DialogProps> = ({
+const CustomDailog: React.FC<StyledDailogProps & DialogProps> = ({
   contentChild,
   footerChild,
   confirmButtonName,
@@ -135,4 +135,4 @@ const Dialog: React.FC<StyledDailogProps & DialogProps> = ({
   )
 }
 
-export default Dialog
+export default CustomDailog

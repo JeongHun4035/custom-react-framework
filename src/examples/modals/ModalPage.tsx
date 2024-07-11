@@ -1,8 +1,9 @@
+import { useState } from "react"
+
 import CodeEditor from "@/components/CodeEditor"
 import CustomButton from "@/components/CustomButton"
 import "@/examples/examples.css"
 import CustomDailog from "@/components/CustomDialog"
-import { useState } from "react"
 import modals from "@/examples/code/modals.json"
 
 const Contents = () => {

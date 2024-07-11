@@ -3,6 +3,7 @@ import "@/examples/index.css"
 
 import ButtonPage from "@/examples/basic/ButtonPage"
 import InputPage from "@/examples/form/InputPage"
+import TablePage from "@/examples/grid/TablePage"
 import ModalPage from "@/examples/modals/ModalPage"
 
 const ExampleRenderer = (currentId: string) => {
@@ -10,6 +11,7 @@ const ExampleRenderer = (currentId: string) => {
     button: <ButtonPage />,
     input: <InputPage />,
     dialog: <ModalPage />,
+    table: <TablePage />,
   }
   return examplePages[currentId] || <div>Empty</div>
 }
