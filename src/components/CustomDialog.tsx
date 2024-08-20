@@ -1,7 +1,7 @@
-import { FaWindowClose } from "react-icons/fa"
-import styled from "styled-components"
+import { FaWindowClose } from 'react-icons/fa'
+import styled from 'styled-components'
 
-import CustomButton from "@/components/CustomButton"
+import CustomButton from '@/components/CustomButton'
 
 interface StyledDailogProps {
   $width?: string
@@ -27,12 +27,12 @@ const DialogContainer = styled.div<StyledDailogProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: ${(props) => props.$border || "thick double #32a1ce"};
-  border-radius: ${(props) => props.$borderRadius || "5%"};
-  color: ${(props) => props.color || "#000000"};
-  background-color: ${(props) => props.$background || "#ffffff"};
-  width: ${(props) => props.$width || "600px"};
-  height: ${(props) => props.$height || "600px"};
+  border: ${(props) => props.$border || 'thick double #32a1ce'};
+  border-radius: ${(props) => props.$borderRadius || '5%'};
+  color: ${(props) => props.color || '#000000'};
+  background-color: ${(props) => props.$background || '#ffffff'};
+  width: ${(props) => props.$width || '600px'};
+  height: ${(props) => props.$height || '600px'};
 `
 
 const DialogHeader = styled.div`
@@ -94,7 +94,7 @@ const CustomDailog: React.FC<StyledDailogProps & DialogProps> = ({
   $height,
   $border,
   $borderRadius,
-  $background,
+  $background
 }) => {
   return (
     <>

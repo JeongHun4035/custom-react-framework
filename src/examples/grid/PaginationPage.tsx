@@ -1,9 +1,9 @@
-import CustomPagination from "@/components/CustomPagination"
+import CustomPagination from '@/components/CustomPagination'
 
 const PaginationPage = () => {
   return (
     <div>
-      <CustomPagination />
+      <CustomPagination totalCount={100} listLimit={10} buttonMax={5} />
     </div>
   )
 }

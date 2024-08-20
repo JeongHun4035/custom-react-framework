@@ -1,10 +1,12 @@
+import { useEffect, useState } from 'react'
+
 import {
   GrChapterPrevious,
   GrCaretPrevious,
   GrCaretNext,
-  GrChapterNext,
-} from "react-icons/gr"
-import styled from "styled-components"
+  GrChapterNext
+} from 'react-icons/gr'
+import styled from 'styled-components'
 
 const PaginationWrapper = styled.div`
   display: flex;
@@ -20,19 +22,39 @@ const IconButton = styled.div`
   }
 `
 
-const NumberButtonArea = styled.div``
+const NumberButtonArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`
 
-const NumberButton = styled.div``
+const NumberButton = styled.button``
 
-const NumberButtons = () => {
-  return (
-    <NumberButtonArea>
-      <NumberButton>1 2 3 4 5 6 7</NumberButton>
-    </NumberButtonArea>
-  )
+export interface IPageProps {
+  totalCount: number
+  listLimit: number
+  buttonMax: number
 }
 
-const CustomPagination = () => {
+const NumberButtons = ({ totalCount, listLimit, buttonMax }: IPageProps) => {
+  const [pageCount, setPageCount] = useState(0)
+  const [numberButtonArray, setNumberButtonArray] = useState<number[]>([])
+
+  useEffect(() => {
+    const count = Math.ceil(totalCount / listLimit)
+    setPageCount(count)
+    setNumberButtonArray(Array.from({ length: count }, (_, i) => i + 1))
+  }, [totalCount, listLimit])
+
+  useEffect(() => {
+    console.log('Page count:', pageCount)
+    console.log('Number button array:', numberButtonArray)
+  }, [pageCount, numberButtonArray])
+
+  return <NumberButtonArea></NumberButtonArea>
+}
+
+const CustomPagination = ({ totalCount, listLimit, buttonMax }: IPageProps) => {
   return (
     <PaginationWrapper>
       <IconButton>
@@ -41,7 +63,11 @@ const CustomPagination = () => {
       <IconButton>
         <GrCaretPrevious />
       </IconButton>
-      <NumberButtons />
+      <NumberButtons
+        totalCount={totalCount}
+        listLimit={listLimit}
+        buttonMax={buttonMax}
+      />
       <IconButton>
         <GrCaretNext />
       </IconButton>

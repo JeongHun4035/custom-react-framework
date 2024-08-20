@@ -1,8 +1,8 @@
-import { IoWarning } from "react-icons/io5"
-import { useNavigate } from "react-router-dom"
-import styled from "styled-components"
+import { IoWarning } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
-import CustomButton from "@/components/CustomButton"
+import CustomButton from '@/components/CustomButton'
 
 const ErrorWrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const ErrorWrapper = styled.div`
 const NotFound = () => {
   const navigate = useNavigate()
   const clickYes = () => {
-    navigate("/")
+    navigate('/')
   }
   return (
     <ErrorWrapper>

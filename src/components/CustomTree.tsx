@@ -1,12 +1,12 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { ITreeItem } from "@/components/types/tree"
+import { ITreeItem } from '@/components/types/tree'
 
-const TreeContainer = styled.ul<{ direction: "row" | "column" }>`
+const TreeContainer = styled.ul<{ direction: 'row' | 'column' }>`
   list-style-type: none;
-  padding-left: ${(props) => (props.direction === "column" ? "10px" : "0")};
+  padding-left: ${(props) => (props.direction === 'column' ? '10px' : '0')};
   margin: 0;
   display: flex;
   flex-direction: ${(props) => props.direction};
@@ -38,23 +38,23 @@ const TreeItemContent = styled.div`
 
 const SubTreeContainer = styled.ul<{
   $isOpen: boolean
-  direction: "row" | "column"
+  direction: 'row' | 'column'
 }>`
   list-style-type: none;
   padding-left: 10px;
   margin: 0;
-  display: ${(props) => (props.$isOpen ? "block" : "none")};
-  position: ${(props) => (props.direction === "row" ? "absolute" : "relative")};
+  display: ${(props) => (props.$isOpen ? 'block' : 'none')};
+  position: ${(props) => (props.direction === 'row' ? 'absolute' : 'relative')};
   top: 100%;
   left: 0;
 `
 
 const CustomTree: React.FC<{
   data: ITreeItem[]
-  direction?: "row" | "column"
+  direction?: 'row' | 'column'
   // eslint-disable-next-line no-unused-vars
   onRowClick?: (id: ITreeItem) => void
-}> = ({ data, direction = "column", onRowClick }) => {
+}> = ({ data, direction = 'column', onRowClick }) => {
   const [openNodes, setOpenNodes] = useState<Set<string>>(new Set())
   const rowToggleEvent = (id: string) => {
     setOpenNodes((prev) => {

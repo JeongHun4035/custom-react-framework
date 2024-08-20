@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState, useContext } from "react"
+import { ReactNode, createContext, useState, useContext } from 'react'
 
 interface SideBarContextType {
   isSideBarVisible: boolean
@@ -10,7 +10,7 @@ const SideBarContext = createContext<SideBarContextType | undefined>(undefined)
 export const useSideBarContext = () => {
   const context = useContext(SideBarContext)
   if (!context) {
-    throw new Error("useSidebarContext must be used within a SidebarProvider")
+    throw new Error('useSidebarContext must be used within a SidebarProvider')
   }
   return context
 }

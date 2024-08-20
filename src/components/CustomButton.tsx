@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 interface StyledButtonProps {
   $padding?: string
@@ -18,13 +18,13 @@ interface ButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  padding: ${(props) => props.$padding || "6px 12px"};
-  font-size: ${(props) => props.$fontSize || "12px"};
+  padding: ${(props) => props.$padding || '6px 12px'};
+  font-size: ${(props) => props.$fontSize || '12px'};
   line-height: 1.5;
-  border: ${(props) => props.$border || "1px solid #0376f9"};
+  border: ${(props) => props.$border || '1px solid #0376f9'};
   border-radius: 4% / 8%;
-  color: ${(props) => props.$color || "#0376f9"};
-  background: ${(props) => props.$background || "#ffffff"};
+  color: ${(props) => props.$color || '#0376f9'};
+  background: ${(props) => props.$background || '#ffffff'};
 
   ${(props) =>
     props.$primary &&
@@ -34,11 +34,11 @@ const StyledButton = styled.button<StyledButtonProps>`
     `}
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.$primary ? "#0376f9" : props.$hoverColor)};
+    color: ${(props) => (props.$primary ? '#0376f9' : props.$hoverColor)};
     background: ${(props) =>
-      props.$primary ? "#0255b5" : props.$hoverBackground};
+      props.$primary ? '#0255b5' : props.$hoverBackground};
     border-color: ${(props) =>
-      props.$primary ? "#0255b5" : props.$hoverBorder};
+      props.$primary ? '#0255b5' : props.$hoverBorder};
   }
 `
 

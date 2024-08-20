@@ -1,4 +1,4 @@
-import Editor from "@monaco-editor/react"
+import Editor from '@monaco-editor/react'
 
 export interface EditorProps {
   width?: string
@@ -9,11 +9,11 @@ export interface EditorProps {
 }
 
 const CodeEditor = ({
-  width = "800px",
-  height = "600px",
-  language = "javascript",
-  theme = "vs-dark",
-  value = "empty",
+  width = '800px',
+  height = '600px',
+  language = 'javascript',
+  theme = 'vs-dark',
+  value = 'empty'
 }: EditorProps) => {
   return (
     <Editor
