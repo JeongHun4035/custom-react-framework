@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState } from "react"
 
-import CodeEditor from '@/components/CodeEditor'
-import CustomButton from '@/components/CustomButton'
-import '@/examples/examples.css'
-import CustomDailog from '@/components/CustomDialog'
-import modals from '@/examples/code/modals.json'
+import CodeEditor from "@/components/CodeEditor"
+import CustomButton from "@/components/CustomButton"
+import "@/examples/examples.css"
+import CustomDailog from "@/components/CustomDialog"
+import modals from "@/examples/code/modals.json"
 
 const Contents = () => {
   return <div>Contents</div>
@@ -24,18 +24,18 @@ const ModalPage = () => {
   return (
     <div>
       <h2>1. Dialog</h2>
-      <div className='examples-wrapper'>
-        <div className='example-area'>
-          <div className='exmaple-item'>
+      <div className="examples-wrapper">
+        <div className="example-area">
+          <div className="example-item">
             <CustomButton
               $primary
-              name='Open Dialog'
+              name="Open Dialog"
               onClick={handleOpenDialog}
             />
           </div>
         </div>
         <div>
-          <div className='code-area'>
+          <div className="code-area">
             <div>
               <h2>Component code</h2>
               <CodeEditor value={modals.codes.component} />
@@ -49,8 +49,8 @@ const ModalPage = () => {
       </div>
       <CustomDailog
         contentChild={<Contents />}
-        confirmButtonName='확인'
-        cancelButtonName='취소'
+        confirmButtonName="확인"
+        cancelButtonName="취소"
         visible={dialogVisible}
         setVisible={setDialogVisible}
         useConfirmEvent={handleCloseDialog}
