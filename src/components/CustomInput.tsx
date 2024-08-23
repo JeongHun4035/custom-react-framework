@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 import styled, { keyframes, css } from "styled-components"
 
@@ -22,6 +22,8 @@ interface InputProps {
   formatFunction?: (value: string) => string
   validationMessage?: string
   validationPattern?: RegExp
+  isRequired?: boolean
+  triggerValidation?: boolean
 }
 
 const shake = keyframes`
@@ -40,10 +42,18 @@ const StyledInput = styled.input<StyledInputProps>`
       : props.$border || "1px solid black"};
   background: ${(props) => props.$background || "#000000"};
   color: ${(props) => props.$color || "#ffffff"};
+
+  &:focus {
+    outline: none;
+    border-color: ${(props) =>
+      props.$isInvalid ? "#BFFF00" : props.$border || "#ffffff"};
+  }
+
   ${(props) =>
     props.$isInvalid &&
     css`
       animation: ${shake} 0.3s ease-in-out;
+      border-color: #bfff00;
     `}
 
   ${(props) =>
@@ -74,14 +84,35 @@ const CustomInput: React.FC<StyledInputProps & InputProps> = ({
   formatFunction,
   validationMessage,
   validationPattern,
+  isRequired,
+  triggerValidation,
   ...props
 }) => {
   const [inputValue, setInputValue] = useState(defaultValue || "")
   const [isInvalid, setIsInvalid] = useState(false)
+  const [currentValidationMessage, setCurrentValidationMessage] = useState(
+    validationMessage || "",
+  )
 
-  useEffect(() => {
-    setInputValue(defaultValue || "")
-  }, [defaultValue])
+  const validateInput = useCallback(
+    (value: string | number) => {
+      const stringValue = value.toString()
+      let invalid = false
+      let message = ""
+
+      if (isRequired && !stringValue) {
+        invalid = true
+        message = "This field is required"
+      } else if (validationPattern && !validationPattern.test(stringValue)) {
+        invalid = true
+        message = validationMessage || "Invalid pattern"
+      }
+
+      setIsInvalid(invalid)
+      setCurrentValidationMessage(message)
+    },
+    [isRequired, validationPattern, validationMessage],
+  )
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value
@@ -91,12 +122,20 @@ const CustomInput: React.FC<StyledInputProps & InputProps> = ({
     if (onChange) {
       onChange(value)
     }
-    if (validationPattern) {
-      const isValid = validationPattern.test(value)
-      setIsInvalid(!isValid)
-    }
+
+    validateInput(value)
     setInputValue(value)
   }
+
+  useEffect(() => {
+    setInputValue(defaultValue || "")
+  }, [defaultValue])
+
+  useEffect(() => {
+    if (triggerValidation) {
+      validateInput(inputValue)
+    }
+  }, [triggerValidation, inputValue, validateInput])
 
   return (
     <div>
@@ -107,8 +146,8 @@ const CustomInput: React.FC<StyledInputProps & InputProps> = ({
         onChange={handleChange}
         $isInvalid={isInvalid}
       />
-      {isInvalid && validationMessage && (
-        <ValidationMessage>{validationMessage}</ValidationMessage>
+      {isInvalid && currentValidationMessage && (
+        <ValidationMessage>{currentValidationMessage}</ValidationMessage>
       )}
     </div>
   )
