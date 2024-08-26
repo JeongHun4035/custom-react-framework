@@ -16,6 +16,7 @@ interface ButtonProps {
   onClick?: () => void
   name: string
   triggerValidation?: () => void
+  soundSrc?: string
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -66,16 +67,22 @@ const CustomButton: React.FC<StyledButtonProps & ButtonProps> = ({
   onClick,
   name,
   triggerValidation,
+  soundSrc = "/audio/click.mp3",
   ...props
 }) => {
   const handleClick = () => {
     if (triggerValidation) {
       triggerValidation()
     }
+    if (soundSrc) {
+      const clickSound = new Audio(soundSrc)
+      clickSound.play()
+    }
     if (onClick) {
       onClick()
     }
   }
+
   return (
     <StyledButton {...props} onClick={handleClick}>
       {name}

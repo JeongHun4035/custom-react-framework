@@ -4,7 +4,11 @@ import { BiSolidCategory } from "react-icons/bi"
 const DashboardGif = () => {
   return (
     <div className="dashboard-display-board">
-      <img src="/dash-board.gif" alt="baseImage" className="dashboard-image" />
+      <img
+        src="/images/dash-board.gif"
+        alt="baseImage"
+        className="dashboard-image"
+      />
     </div>
   )
 }
