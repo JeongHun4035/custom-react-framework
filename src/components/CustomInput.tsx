@@ -28,9 +28,8 @@ interface InputProps {
 
 const shake = keyframes`
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
 `
 
 const StyledInput = styled.input<StyledInputProps>`

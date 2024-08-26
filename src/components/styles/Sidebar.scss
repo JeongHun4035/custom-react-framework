@@ -19,9 +19,21 @@
     display: flex;
     height: 52px;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: #212226;
 
+    .sidebar-home-button {
+      font-size: 20px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        cursor: pointer;
+        color: #81c784;
+      }
+    }
     .sidebar-close-button {
       padding: 15px;
 

@@ -1,5 +1,6 @@
 import "@/components/styles/Sidebar.scss"
 import { FaWindowClose } from "react-icons/fa"
+import { SiHomeadvisor } from "react-icons/si"
 import { useNavigate } from "react-router-dom"
 
 import CustomTree from "@/components/CustomTree"
@@ -97,15 +98,24 @@ const SideBar = () => {
       navigate(`/example/${item.id}`)
     }
   }
+  const goMain = () => {
+    navigate("/")
+  }
   return (
     <div
       className={`sidebar-wrapper ${isSideBarVisible ? "visible" : "hidden"}`}
     >
       <div className="sidebar-header">
-        <FaWindowClose
-          className="sidebar-close-button"
-          onClick={toggleSideBar}
-        />
+        <div className="sidebar-home-button" onClick={goMain}>
+          <SiHomeadvisor />
+          <span>Home</span>
+        </div>
+        <div>
+          <FaWindowClose
+            className="sidebar-close-button"
+            onClick={toggleSideBar}
+          />
+        </div>
       </div>
       <div className="sidebar-menus">
         <h2>Structure Items</h2>

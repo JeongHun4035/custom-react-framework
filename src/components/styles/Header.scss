@@ -4,13 +4,14 @@
   font-size: 25px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  text-align: center;
+  align-items: center; /* 전체 헤더의 수직 정렬 */
   justify-content: space-between;
 
   .side-controller {
     padding: 4px;
     margin-left: 10px;
+    display: flex;
+    align-items: center; /* 아이콘 수직 정렬 */
 
     &:hover {
       cursor: pointer;
@@ -20,11 +21,13 @@
 
   .preferences-wrapper {
     display: flex;
-    align-items: center;
+    align-items: center; /* 선호 설정 아이콘과 텍스트 수직 정렬 */
 
     .preferences-item {
       position: relative;
       margin-right: 16px;
+      display: flex;
+      align-items: center; /* 아이템 내부 수직 정렬 */
 
       &:hover {
         cursor: pointer;
@@ -33,6 +36,8 @@
 
       span {
         font-size: 12px;
+        display: flex;
+        align-items: center; /* 텍스트 수직 정렬 */
       }
     }
   }
