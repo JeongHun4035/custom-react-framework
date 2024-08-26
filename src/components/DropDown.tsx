@@ -16,7 +16,7 @@ const DropDownContainer = styled.div<{ $top: number; $left: number }>`
   padding: 10px 0;
   max-height: 300px;
   overflow-y: auto;
-  min-width: 150px; /* Ensure minimum width */
+  min-width: 150px;
 `
 
 const DropDownUl = styled.ul`

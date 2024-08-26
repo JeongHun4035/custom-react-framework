@@ -17,27 +17,24 @@ const DialogArea = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* 배경을 더 어둡게 */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* 다른 요소들 위로 나오도록 설정 */
+  z-index: 1000;
 `
 
 const DialogContainer = styled.div<StyledDailogProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: ${(props) =>
-    props.$border || "2px solid #444"}; /* 경계선 색상을 어둡게 조정 */
-  border-radius: ${(props) =>
-    props.$borderRadius || "10px"}; /* 라운딩을 더 부드럽게 조정 */
-  color: ${(props) => props.color || "#eaeaea"}; /* 텍스트 색상을 밝게 설정 */
-  background-color: ${(props) =>
-    props.$background || "#2c2c2c"}; /* 배경색을 어두운 색상으로 변경 */
+  border: ${(props) => props.$border || "2px solid #444"};
+  border-radius: ${(props) => props.$borderRadius || "10px"};
+  color: ${(props) => props.color || "#eaeaea"};
+  background-color: ${(props) => props.$background || "#2c2c2c"};
   width: ${(props) => props.$width || "500px"};
   height: ${(props) => props.$height || "auto"};
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 20px;
 `
 
@@ -47,7 +44,7 @@ const DialogHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 2px solid #555; /* 경계선 색상을 어둡게 조정 */
+  border-bottom: 2px solid #555;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `
 
@@ -57,7 +54,7 @@ const CloseButton = styled(FaWindowClose)`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ff5f5f; /* 호버 시 색상을 더 강렬하게 */
+    color: #ff5f5f;
     cursor: pointer;
   }
 `
