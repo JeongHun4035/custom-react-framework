@@ -12,6 +12,7 @@ const InputPage = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [requiredValue, setRequiredValue] = useState<string>("")
+
   const [triggerValidation, setTriggerValidation] = useState<boolean>(false)
 
   const handlePhoneNumberChange = (value: string) => {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import styled from 'styled-components'
 
-import { ITreeItem } from '@/components/types/tree'
+import { ITreeItem } from '@/components/types'
 
 const TreeContainer = styled.ul<{ direction: 'row' | 'column' }>`
   list-style-type: none;

@@ -21,16 +21,12 @@
 
 .preferences-wrapper {
   display: flex;
-  flex-direction: row;
-  padding: 4px;
-  gap: 10px;
-  text-align: center;
   align-items: center;
 }
 
 .preferences-item {
-  display: flex;
-  align-items: center;
+  position: relative;
+  margin-right: 16px;
 }
 
 .preferences-item:hover {
@@ -41,5 +37,3 @@
 .preferences-item span {
   font-size: 12px;
 }
-
-
