@@ -1,0 +1,17 @@
+.example-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  .example-page-title {
+    padding: 20px;
+    color: #bfff00;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .example-contents {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+}

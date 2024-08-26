@@ -1,0 +1,32 @@
+.examples-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .example-area,
+  .code-area {
+    flex: 1;
+  }
+
+  .example-area {
+    display: flex;
+    flex-direction: row;
+    background-color: #1e1e1e;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+
+    .example-item {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 10px;
+    }
+  }
+
+  .code-area {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
