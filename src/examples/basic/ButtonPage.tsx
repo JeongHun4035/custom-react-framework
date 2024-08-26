@@ -1,7 +1,5 @@
-import CodeEditor from "@/components/CodeEditor"
 import CustomButton from "@/components/CustomButton"
 import "@/examples/examples.scss"
-import buttons from "@/examples/code/buttons.json"
 
 const ButtonPage = () => {
   return (
@@ -27,16 +25,6 @@ const ButtonPage = () => {
                 $hoverBackground="white"
               />
             </div>
-          </div>
-        </div>
-        <div className="code-area">
-          <div>
-            <h2>Component code</h2>
-            <CodeEditor value={buttons.codes.component} />
-          </div>
-          <div>
-            <h2>Example code</h2>
-            <CodeEditor value={buttons.codes.example} />
           </div>
         </div>
       </div>

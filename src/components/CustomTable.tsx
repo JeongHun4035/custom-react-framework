@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 interface TableStyledProps {
   $width?: string
@@ -18,57 +18,61 @@ interface TableStyledProps {
 }
 
 const TableWrapper = styled.div<TableStyledProps>`
-  border: solid 1px;
-  width: ${(props) => props.$width || 'auto'};
-  height: ${(props) => props.$height || 'auto'};
+  border: solid 1px #444;
+  width: ${(props) => props.$width || "auto"};
+  height: ${(props) => props.$height || "auto"};
+  background-color: #2f3136;
 `
 
 const TableArea = styled.table`
   padding: 2px;
   width: 100%;
   height: 100%;
+  color: #ffffff;
 `
 
 const TableHeader = styled.thead<TableStyledProps>`
-  color: ${(props) => props.$columnColor || '#000000'};
-  background-color: ${(props) => props.$columnBackground || '#bebade'};
-  text-align: ${(props) => props.$columnAlign || 'center'};
+  color: ${(props) => props.$columnColor || "#ffffff"};
+  background-color: ${(props) => props.$columnBackground || "#3a3b3c"};
+  text-align: ${(props) => props.$columnAlign || "center"};
 `
 
 const TableColumnTr = styled.tr``
 
 const TableColumnTh = styled.th<TableStyledProps>`
   padding: 10px;
+  border-bottom: 1px solid #555;
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.$columnHoverColor || 'blue'};
-    background-color: ${(props) => props.$columnHoverBackground || 'white'};
+    color: ${(props) => props.$columnHoverColor || "#bfff00"};
+    background-color: ${(props) => props.$columnHoverBackground || "#444"};
   }
 `
 const TableBody = styled.tbody<TableStyledProps>`
-  text-align: ${(props) => props.$rowAlign || 'center'};
-  background-color: ${(props) => props.$rowBackground || '#ffffff'};
-  color: ${(props) => props.$rowColor || '#000000'};
+  text-align: ${(props) => props.$rowAlign || "center"};
+  background-color: ${(props) => props.$rowBackground || "#2f3136"};
+  color: ${(props) => props.$rowColor || "#ffffff"};
 `
 
 const TableBodyTr = styled.tr<TableStyledProps>`
   border-radius: 5%;
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.$rowHoverColor || 'blue'};
-    background-color: ${(props) => props.$rowHoverBackground || '#bebade'};
+    color: ${(props) => props.$rowHoverColor || "#bfff00"};
+    background-color: ${(props) => props.$rowHoverBackground || "#3a3b3c"};
   }
 `
 
 const TableBodyTd = styled.td`
   padding: 10px;
+  border-bottom: 1px solid #444;
 `
 
 const TableBodyCell = styled.span<TableStyledProps>`
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.$cellHoverColor || 'red'};
-    background-color: ${(props) => props.$cellHoverBackground || '#bebade'};
+    color: ${(props) => props.$cellHoverColor || "#ff4081"};
+    background-color: ${(props) => props.$cellHoverBackground || "#555"};
   }
 `
 
@@ -106,7 +110,7 @@ const CustomTable: React.FC<TableStyledProps & ICustomTable> = ({
   $rowHoverBackground,
   $rowAlign,
   $cellHoverColor,
-  $cellHoverBackground
+  $cellHoverBackground,
 }) => {
   return (
     <TableWrapper $height={$height} $width={$width}>
