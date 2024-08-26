@@ -1,7 +1,7 @@
 import CodeEditor from "@/components/CodeEditor"
 import CustomTable from "@/components/CustomTable"
 import { IColumn } from "@/components/CustomTable"
-import "@/examples/examples.css"
+import "@/examples/examples.scss"
 import tables from "@/examples/code/tables.json"
 
 const TablePage = () => {

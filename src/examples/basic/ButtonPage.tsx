@@ -1,6 +1,6 @@
 import CodeEditor from "@/components/CodeEditor"
 import CustomButton from "@/components/CustomButton"
-import "@/examples/examples.css"
+import "@/examples/examples.scss"
 import buttons from "@/examples/code/buttons.json"
 
 const ButtonPage = () => {

@@ -96,7 +96,7 @@ export default [
               group: "internal",
             },
             {
-              pattern: "**/*.css",
+              pattern: "**/*.scss",
               group: "unknown",
               position: "after",
             },

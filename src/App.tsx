@@ -1,6 +1,6 @@
-import './App.css'
+import "./App.scss"
 
-import Router from './Router.tsx'
+import Router from "./Router.tsx"
 
 const App = () => {
   return <Router />

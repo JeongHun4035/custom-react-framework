@@ -1,17 +1,17 @@
-import '@/styles/DashBaord.css'
-import { BiSolidCategory } from 'react-icons/bi'
+import "@/styles/DashBaord.scss"
+import { BiSolidCategory } from "react-icons/bi"
 
 const DashboardGif = () => {
   return (
-    <div className='dashboard-display-board'>
-      <img src='/dash-board.gif' alt='baseImage' className='dashboard-image' />
+    <div className="dashboard-display-board">
+      <img src="/dash-board.gif" alt="baseImage" className="dashboard-image" />
     </div>
   )
 }
 
 const DashboardIntro = () => {
   return (
-    <div className='dashboard-introduction'>
+    <div className="dashboard-introduction">
       <div>
         <h2>
           <BiSolidCategory /> Intro
@@ -27,8 +27,8 @@ const DashboardIntro = () => {
 const DashBoard = () => {
   return (
     <>
-      <div className='dashboard-wrapper'>
-        <div className='dashboard-container'>
+      <div className="dashboard-wrapper">
+        <div className="dashboard-container">
           <DashboardGif />
           <DashboardIntro />
         </div>

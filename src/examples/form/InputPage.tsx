@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import CustomButton from "@/components/CustomButton"
 import CustomInput from "@/components/CustomInput"
-import "@/examples/examples.css"
+import "@/examples/examples.scss"
 import { formatPhoneNumber, insertCommas } from "@/utils"
 
 const InputPage = () => {

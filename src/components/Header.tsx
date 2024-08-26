@@ -1,4 +1,4 @@
-import "@/components/styles/Header.css"
+import "@/components/styles/Header.scss"
 
 import { useRef, useState } from "react"
 
