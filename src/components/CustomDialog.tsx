@@ -1,7 +1,7 @@
-import { FaWindowClose } from 'react-icons/fa'
-import styled from 'styled-components'
+import { FaWindowClose } from "react-icons/fa"
+import styled from "styled-components"
 
-import CustomButton from '@/components/CustomButton'
+import CustomButton from "@/components/CustomButton"
 
 interface StyledDailogProps {
   $width?: string
@@ -17,22 +17,28 @@ const DialogArea = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7); /* 배경을 더 어둡게 */
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000; /* 다른 요소들 위로 나오도록 설정 */
 `
 
 const DialogContainer = styled.div<StyledDailogProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: ${(props) => props.$border || 'thick double #32a1ce'};
-  border-radius: ${(props) => props.$borderRadius || '5%'};
-  color: ${(props) => props.color || '#000000'};
-  background-color: ${(props) => props.$background || '#ffffff'};
-  width: ${(props) => props.$width || '600px'};
-  height: ${(props) => props.$height || '600px'};
+  border: ${(props) =>
+    props.$border || "2px solid #444"}; /* 경계선 색상을 어둡게 조정 */
+  border-radius: ${(props) =>
+    props.$borderRadius || "10px"}; /* 라운딩을 더 부드럽게 조정 */
+  color: ${(props) => props.color || "#eaeaea"}; /* 텍스트 색상을 밝게 설정 */
+  background-color: ${(props) =>
+    props.$background || "#2c2c2c"}; /* 배경색을 어두운 색상으로 변경 */
+  width: ${(props) => props.$width || "500px"};
+  height: ${(props) => props.$height || "auto"};
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  padding: 20px;
 `
 
 const DialogHeader = styled.div`
@@ -40,21 +46,18 @@ const DialogHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: 2px solid #89c4f4;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-bottom: 2px solid #555; /* 경계선 색상을 어둡게 조정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `
 
 const CloseButton = styled(FaWindowClose)`
   color: #89c4f4;
-  font-size: 30px;
-  transition:
-    background-color 0.3s linear,
-    color 0.3s linear;
+  font-size: 24px;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #005f8c;
+    color: #ff5f5f; /* 호버 시 색상을 더 강렬하게 */
     cursor: pointer;
   }
 `
@@ -64,10 +67,10 @@ const DialogFooter = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 10px;
-  padding: 10px;
+  margin-top: 20px;
   gap: 10px;
 `
+
 export interface DialogProps {
   contentChild: React.ReactNode
   footerChild?: React.ReactNode
@@ -94,7 +97,7 @@ const CustomDailog: React.FC<StyledDailogProps & DialogProps> = ({
   $height,
   $border,
   $borderRadius,
-  $background
+  $background,
 }) => {
   return (
     <>
@@ -108,7 +111,7 @@ const CustomDailog: React.FC<StyledDailogProps & DialogProps> = ({
             $background={$background}
           >
             <DialogHeader>
-              <h3>title</h3>
+              <h3>Dialog Title</h3>
               <CloseButton onClick={() => setVisible(false)} />
             </DialogHeader>
             <div>{contentChild}</div>

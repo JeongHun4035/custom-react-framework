@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import CustomButton from "@/components/CustomButton"
 import "@/examples/examples.scss"
-import CustomDailog from "@/components/CustomDialog"
+import CustomDialog from "@/components/CustomDialog"
 
 const Contents = () => {
   return <div>Contents</div>
@@ -33,7 +33,7 @@ const ModalPage = () => {
           </div>
         </div>
       </div>
-      <CustomDailog
+      <CustomDialog
         contentChild={<Contents />}
         confirmButtonName="확인"
         cancelButtonName="취소"

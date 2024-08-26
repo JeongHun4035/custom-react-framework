@@ -19,27 +19,46 @@ interface ButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  padding: ${(props) => props.$padding || "6px 12px"};
-  font-size: ${(props) => props.$fontSize || "12px"};
+  padding: ${(props) => props.$padding || "10px 20px"};
+  font-size: ${(props) => props.$fontSize || "14px"};
   line-height: 1.5;
-  border: ${(props) => props.$border || "1px solid #0376f9"};
-  border-radius: 4% / 8%;
-  color: ${(props) => props.$color || "#0376f9"};
-  background: ${(props) => props.$background || "#ffffff"};
+  border: ${(props) => props.$border || "2px solid #00bfa5"};
+  border-radius: 8px;
+  color: ${(props) => props.$color || "#00bfa5"};
+  background: ${(props) => props.$background || "#1a1a1a"};
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 
   ${(props) =>
     props.$primary &&
     css`
       color: #ffffff;
-      background: #0376f9;
+      background: #00bfa5;
+      box-shadow:
+        0 0 6px #00bfa5,
+        0 0 12px #00bfa5;
+      border-color: #00bfa5;
     `}
+
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.$primary ? "#0376f9" : props.$hoverColor)};
+    color: ${(props) =>
+      props.$primary ? "#1a1a1a" : props.$hoverColor || "#00bfa5"};
     background: ${(props) =>
-      props.$primary ? "#0255b5" : props.$hoverBackground};
+      props.$primary ? "#009688" : props.$hoverBackground || "#2c2c2c"};
     border-color: ${(props) =>
-      props.$primary ? "#0255b5" : props.$hoverBorder};
+      props.$primary ? "#009688" : props.$hoverBorder || "#00bfa5"};
+    box-shadow:
+      0 0 8px ${(props) => props.$hoverColor || "#00bfa5"},
+      0 0 16px ${(props) => props.$hoverColor || "#00bfa5"};
+  }
+
+  &:active {
+    background: ${(props) =>
+      props.$primary ? "#00695c" : props.$hoverBackground || "#2c2c2c"};
+    border-color: ${(props) =>
+      props.$primary ? "#00695c" : props.$hoverBorder || "#00bfa5"};
+    box-shadow: none;
   }
 `
 
