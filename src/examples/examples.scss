@@ -11,12 +11,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.7rem;
+  }
 
-    .example-item {
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      gap: 10px;
-    }
+  .example-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
   }
 }
